@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "\"USER\"")
+@Entity(name = "userData")
 @Data
 @NoArgsConstructor
 public class User {

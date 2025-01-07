@@ -1,14 +1,14 @@
 package com.example.springbootbe.store;
-
+import static java.lang.System.out;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+import static java.lang.System.out;
 @RestController
-@RequestMapping("/api/store/order")
+@RequestMapping("/api/store/orders")
 public class OrderController {
 
     private final OrderService orderService;
@@ -57,6 +57,7 @@ public class OrderController {
     // Delete an order by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOrder(@PathVariable Long id) {
+        System.out.println(id);
         try {
             orderService.deleteOrder(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);

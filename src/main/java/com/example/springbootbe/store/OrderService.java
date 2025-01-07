@@ -27,6 +27,8 @@ public class OrderService {
 
     // Get order by ID
     public Order getOrderById(Long id) {
+
+
         Optional<Order> order = orderRepository.findById(id);
         return order.orElseThrow(() -> new RuntimeException("Order not found with id: " + id));
     }
