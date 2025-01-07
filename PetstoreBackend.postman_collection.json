@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "2dd1f17a-6266-4e12-9156-9b802ec6747f",
+		"name": "PetstoreBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"petId\": 1243,\r\n  \"quantity\": 2,\r\n  \"shipDate\": \"2025-01-10\",\r\n  \"status\": \"PLACED\",\r\n  \"complete\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/store/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"store",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"isuru\",\r\n  \"firstName\": \"yo\",\r\n  \"lastName\": \"yoo\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"securePassword123\",\r\n  \"phone\": \"1234567890\",\r\n  \"userStatus\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Buddyy\",\r\n  \"photoUrls\": [\r\n    \"https://example.com/photo1.jpg\",\r\n    \"https://example.com/photo2.jpg\"\r\n  ],\r\n  \"status\": \"AVAILABLE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
