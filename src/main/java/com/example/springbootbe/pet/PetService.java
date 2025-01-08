@@ -2,6 +2,7 @@ package com.example.springbootbe.pet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -31,16 +32,14 @@ public class PetService {
         return pet.orElseThrow(() -> new RuntimeException("Pet not found with id: " + id));
     }
 
-    // Get pets by status
-    public List<Pet> getPetsByStatus(Pet.Status status) {
-        return petRepository.findByStatus(status);
-    }
-
     // Update a pet (you can implement a method for partial update if needed)
-    public Pet updatePet(Long id, Pet updatedPet) {
-        if (petRepository.existsById(id)) {
-            updatedPet.setId(id);
-            return petRepository.save(updatedPet);
+    public Pet updatePet(Long id, String name, Pet.Status status) {
+        Optional<Pet> petData = petRepository.findById(id);
+        if (petData.isPresent()) {
+            Pet pet = petData.get();
+            pet.setName(name);
+            pet.setStatus(status);
+            return petRepository.save(pet);
         } else {
             throw new RuntimeException("Pet not found with id: " + id);
         }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/pets")
+@RequestMapping("/api/pet")
 public class PetController {
 
     private final PetService petService;
@@ -31,13 +31,6 @@ public class PetController {
         return ResponseEntity.ok(pet);
     }
 
-    // Get pets by status
-    @GetMapping("/status/{status}")
-    public ResponseEntity<List<Pet>> getPetsByStatus(@PathVariable Pet.Status status) {
-        List<Pet> pets = petService.getPetsByStatus(status);
-        return ResponseEntity.ok(pets);
-    }
-
     // Create a new pet
     @PostMapping
     public ResponseEntity<Pet> createPet(@RequestBody Pet pet) {
@@ -45,11 +38,10 @@ public class PetController {
         return ResponseEntity.ok(createdPet);
     }
 
-    // Update an existing pet
-    @PutMapping("/{id}")
-    public ResponseEntity<Pet> updatePet(@PathVariable Long id, @RequestBody Pet pet) {
-        pet.setId(id); // Ensure the ID is set for updating
-        Pet updatedPet = petService.savePet(pet);
+    // Update an existing pet by Id
+    @PostMapping("/{id}")
+    public ResponseEntity<Pet> updatePetById(@PathVariable Long id,@RequestParam String name, @RequestParam Pet.Status status) {
+        Pet updatedPet = petService.updatePet(id,name,status);
         return ResponseEntity.ok(updatedPet);
     }
 

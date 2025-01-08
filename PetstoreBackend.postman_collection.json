@@ -20,7 +20,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/store/orders",
+					"raw": "http://localhost:8080/api/store/order",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,7 +29,7 @@
 					"path": [
 						"api",
 						"store",
-						"orders"
+						"order"
 					]
 				}
 			},
@@ -50,7 +50,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/users",
+					"raw": "http://localhost:8080/api/user",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,7 +58,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"users"
+						"user"
 					]
 				}
 			},
@@ -79,7 +79,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/pets",
+					"raw": "http://localhost:8080/api/pet",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -87,7 +87,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"pets"
+						"pet"
 					]
 				}
 			},
